@@ -23,21 +23,27 @@ const arrayCleaner=(array)=>{
 //Programación funcional
 // Función recorre todo el array en busca del número 4. Cuando lo consigue retorna el index en el que se encuentra.
 const numFourFinder = (arr) =>{
-    for(let i = 0; i<arr.length; i++){
-        if (arr[i] === 4){
-            return i;
-        };
-    };
+    let i = 0;
+    while (arr[i] !== 4){
+        i++
+    }
+    return i
 };
 console.log (numFourFinder(exampleArray))
 
 //Programación declarativa
-//Usando la función map pido que imprima el indice de cualquier valor que sea 4.
-exampleArray.map((value,index)=>{
-    if(value === 4){
-        console.log (index);
-    };
-});
+//Usando la función foreach pido que imprima el indice de cualquier valor que sea 4.
+// exampleArray.forEach((element, index)=>{
+//     if(element === 4){
+//         console.log (index);
+//     };
+// });
+
+//Utilizo la función indexof para ubicar el index del valor 4. 
+function declarativeSearch(array, value) {
+    return array.indexOf(value)
+};
+console.log(declarativeSearch(exampleArray, 4))
 
 //Ejercicio 2: Crea una funcion que limpie el array shit usando programación declarativa
 
